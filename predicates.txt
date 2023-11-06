@@ -1,0 +1,15 @@
+predicates
+start.
+pars(string).
+dict(string,string).
+clauses
+start:-write("Enter Sentence: "),readIn(X),pars(X).
+pars(""):-!.
+pars(S):-fronttoken(S,W,W1),dict(W,W1),write(W,"",W1),pars(S1).
+dict("ali"," keyword ").
+dict("Mohammed"," keyword ").
+dict("1"," number ").
+dict("+"," operater ").
+dict(_," Unknown ").
+
+
